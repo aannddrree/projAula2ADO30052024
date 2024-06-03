@@ -26,6 +26,7 @@ namespace Repositories
                 cmd.Parameters.Add(new SqlParameter("@Name", car.Name));
                 cmd.Parameters.Add(new SqlParameter("@Color", car.Color));
                 cmd.Parameters.Add(new SqlParameter("@Year", car.Year));
+                cmd.Parameters.Add(new SqlParameter("@InsuranceId", car.Insurance.Id));
                 cmd.ExecuteNonQuery();
                 result = true;
 

@@ -3,13 +3,34 @@ using Controllers;
 using Models;
 
 Console.WriteLine("Inicio do processamento");
+/*
+Insurance insurance = new Insurance()
+{
+    Description = "Seguro TOP"
+};
+
+if (new InsuranceController().Insert(insurance))
+{
+    Console.WriteLine("Registro Inserido!");
+}
+else
+{
+    Console.WriteLine("Erro ao Inserir Registro");
+}*/
+
 
 Car car = new Car
 {   
     Name = "Carro muito legal",
     Color = "Vermelho",
-    Year = 2025
+    Year = 2025,
+    Insurance = new Insurance { Id = 2 }
 };
+
+Console.WriteLine(new CarController().Insert(car) ? "Registro Inserido - " + car.Name : "Erro ao inserir Registro");
+
+
+
 /*
 for (int i = 1; i <= 10000; i++)
 {
@@ -17,11 +38,11 @@ for (int i = 1; i <= 10000; i++)
     Console.WriteLine(new CarController().Insert(car) ? "Registro Inserido - " + car.Name : "Erro ao inserir Registro");
 }*/
 
-
+/*
 foreach (var item in new CarController().GetAll().Where(x => x.Id > 990).ToList().Take(10))
 {
     Console.WriteLine(item); 
-}
+}*/
 
 //Console.WriteLine(car);
 
