@@ -20,22 +20,23 @@ namespace Repositories
             conn.Open();
         }
 
-        public bool Insert(Insurance insurance)
+        public int Insert(Insurance insurance)
         {
-            bool result = false;
+            int result = 0;
 
             try
             {
                 SqlCommand cmd = new SqlCommand(Insurance.INSERT, conn);
-                cmd.Parameters.Add(new SqlParameter("@Description", 
-                    insurance.Description));
-                cmd.ExecuteNonQuery();
-                result = true;
+                cmd.Parameters.Add(new SqlParameter("@Description", insurance.Description));
+                result = (int) cmd.ExecuteScalar();
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                result = false;
+
+                Console.WriteLine("ERROR: " + e.Message);
+                //throw;
+                result = 0;
             }
             finally
             {

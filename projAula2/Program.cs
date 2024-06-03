@@ -6,7 +6,7 @@ Console.WriteLine("Inicio do processamento");
 /*
 Insurance insurance = new Insurance()
 {
-    Description = "Seguro TOP"
+    Description = "Seguro Mega TOP"
 };
 
 if (new InsuranceController().Insert(insurance))
@@ -21,10 +21,10 @@ else
 
 Car car = new Car
 {   
-    Name = "Carro muito legal",
+    Name = "Carro muito legal3",
     Color = "Vermelho",
     Year = 2025,
-    Insurance = new Insurance { Id = 2 }
+    Insurance = new Insurance { Description = "Seguro Bagunça3" }
 };
 
 Console.WriteLine(new CarController().Insert(car) ? "Registro Inserido - " + car.Name : "Erro ao inserir Registro");

@@ -18,7 +18,7 @@ namespace Services
             _repository = new InsuranceRepository();
         }
 
-        public bool Insert(Insurance insurance)
+        public int Insert(Insurance insurance)
         {
             return _repository.Insert(insurance);
         }

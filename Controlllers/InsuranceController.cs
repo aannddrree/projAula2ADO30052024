@@ -18,7 +18,7 @@ namespace Controllers
             _insuranceService = new InsuranceService();
         }
 
-        public bool Insert(Insurance insurance)
+        public int Insert(Insurance insurance)
         {
             return _insuranceService.Insert(insurance);
         }

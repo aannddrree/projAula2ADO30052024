@@ -5,15 +5,19 @@ namespace Controllers
 {
     public class CarController
     {
-        private CarService _carService;    
+        private CarService _carService;
+        private InsuranceService _insuranceService;
 
         public CarController() {
             _carService = new CarService();
+            _insuranceService = new InsuranceService();
         }
 
         public bool Insert(Car car)
         {
-            Console.WriteLine("Camada Controller");
+
+            //Inserir o Insurance 
+            car.Insurance.Id = _insuranceService.Insert(car.Insurance);
             return _carService.Insert(car);
         }
         public bool Delete(int id)
